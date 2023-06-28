@@ -55,7 +55,7 @@ public class ProductController {
        return ResponseEntity.status(HttpStatus.OK).body(product0.get());
     }
     
-    
+    //UPDATE product
     @PutMapping("/products/{id}")
     public ResponseEntity<Object> updateProduct (@PathVariable (value = "id") UUID id, 
                                                                 @RequestBody  @Valid ProductRecordDto productRecordDto ){
