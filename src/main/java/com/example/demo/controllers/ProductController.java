@@ -57,8 +57,7 @@ public class ProductController {
     
     //UPDATE product
     @PutMapping("/products/{id}")
-    public ResponseEntity<Object> updateProduct (@PathVariable (value = "id") UUID id, 
-                                                                @RequestBody  @Valid ProductRecordDto productRecordDto ){
+    public ResponseEntity<Object> updateProduct (@PathVariable (value = "id") UUID id, @RequestBody  @Valid ProductRecordDto productRecordDto ){
         Optional<ProductModel>  product0 = productRepository.findById(id);
         if(product0.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto inexistente");
